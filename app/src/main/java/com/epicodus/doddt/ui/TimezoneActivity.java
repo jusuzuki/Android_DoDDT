@@ -18,6 +18,7 @@ public class TimezoneActivity extends AppCompatActivity {
     private long mCurrentTime;
     private TextView mTimePDX;
     private TextView mTimeSAO;
+    private TextView mTimeTOKYO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +27,13 @@ public class TimezoneActivity extends AppCompatActivity {
 
         mTimePDX = (TextView) findViewById(R.id.timePDX);
         mTimeSAO = (TextView) findViewById(R.id.timeSAO);
+        mTimeTOKYO = (TextView) findViewById(R.id.timeTOKYO);
 
         mCurrentTime = new Date().getTime();
 
         mTimePDX.setText(getTimePDX());
         mTimeSAO.setText(getTimeSAO());
+        mTimeTOKYO.setText(getTimeTOKYO());
     }
 
 
@@ -44,6 +47,12 @@ public class TimezoneActivity extends AppCompatActivity {
     public String getTimeSAO(){
         SimpleDateFormat formatter = new SimpleDateFormat("EEEE, MMMM d 'at' h:mma");
         formatter.setTimeZone(TimeZone.getTimeZone("America/Sao_Paulo"));
+        return formatter.format(mCurrentTime);
+    }
+
+    public String getTimeTOKYO(){
+        SimpleDateFormat formatter = new SimpleDateFormat("EEEE, MMMM d 'at' h:mma");
+        formatter.setTimeZone(TimeZone.getTimeZone("Asia/Tokyo"));
         return formatter.format(mCurrentTime);
     }
 

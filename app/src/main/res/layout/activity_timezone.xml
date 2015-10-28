@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/timePDX"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="69dp"
         android:textColor="@android:color/holo_red_dark"
         android:gravity="center"
         android:textStyle="bold"
@@ -26,14 +26,14 @@
         android:layout_height="wrap_content"
         android:text="SAO"
         android:id="@+id/timeSAO"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="101dp"
         android:textStyle="bold"
         android:textSize="20sp"
         android:gravity="center"
-        android:textColor="@android:color/holo_red_dark"/>
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_below="@+id/titleSAO"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="81dp"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -55,8 +55,36 @@
         android:gravity="center"
         android:background="@android:color/black"
         android:textColor="@android:color/white"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
+        android:layout_marginTop="63dp"
+        android:layout_below="@+id/timePDX"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TOKYO"
+        android:id="@+id/titleTOKYO"
+        android:gravity="center"
+        android:background="@android:color/black"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="59dp"
+        android:layout_above="@+id/timeTOKYO"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TOKYO"
+        android:id="@+id/timeTOKYO"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_marginBottom="67dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
 
 </RelativeLayout>
