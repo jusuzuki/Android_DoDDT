@@ -24,21 +24,15 @@
         android:layout_above="@+id/galleryButton"
         android:layout_centerHorizontal="true"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Spinchat"
-        android:id="@+id/spinchatButton"
-        android:layout_above="@+id/quotesButton"
-        android:layout_centerHorizontal="true"/>
+
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Timezone"
         android:id="@+id/timezoneButton"
-        android:layout_above="@+id/spinchatButton"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/quotesButton"/>
 
     <TextView
         android:layout_width="match_parent"

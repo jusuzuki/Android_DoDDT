@@ -13,7 +13,6 @@ import com.epicodus.doddt.R;
 public class MainActivity extends AppCompatActivity {
 
     private Button mTimezoneButton;
-    private Button mSpinchatButton;
     private Button mQuotesButton;
     private Button mGalleryButton;
 
@@ -23,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mTimezoneButton = (Button) findViewById(R.id.timezoneButton);
-        mSpinchatButton = (Button) findViewById(R.id.spinchatButton);
         mQuotesButton = (Button) findViewById(R.id.quotesButton);
         mGalleryButton = (Button) findViewById(R.id.galleryButton);
 
@@ -39,6 +37,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, GalleryActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mQuotesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, QuoteActivity.class);
                 startActivity(intent);
             }
         });
