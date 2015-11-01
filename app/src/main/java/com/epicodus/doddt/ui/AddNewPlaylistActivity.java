@@ -3,8 +3,6 @@ package com.epicodus.doddt.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,7 +29,7 @@ public class AddNewPlaylistActivity extends AppCompatActivity {
                 String name = mNewPlaylistName.getText().toString();
                 Playlist playlist = Playlist.newPlaylist(name);
                 playlist.save();
-                Intent intent = new Intent(AddNewPlaylistActivity.this, PlaylistActivity.class);
+                Intent intent = new Intent(AddNewPlaylistActivity.this, AllPlaylistsActivity.class);
                 startActivity(intent);
             }
         });

@@ -1,69 +1,46 @@
 package com.epicodus.doddt.ui;
 
 import android.app.ListActivity;
-import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.epicodus.doddt.R;
-import com.epicodus.doddt.adapters.PlaylistAdapter;
-import com.epicodus.doddt.adapters.SongAdapter;
+import com.epicodus.doddt.adapters.SongsInPlaylistAdapter;
 import com.epicodus.doddt.models.Playlist;
 import com.epicodus.doddt.models.Song;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
 public class PlaylistActivity extends ListActivity {
 
-    private Button mAddNewPlaylistButton;
-    private Button mAddNewSongButton;
-    private Button mViewAllSongsButton;
-    private PlaylistAdapter mAdapter;
-    private ArrayList<Playlist> mPlaylists;
-    private TextView mDisplaySomething;
+    private TextView mPlaylistNameText;
+    private Button mAddSongsToPlaylistButton;
+    private SongsInPlaylistAdapter mAdapter;
+    private ArrayList<Song> mSongs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playlist);
 
-        mAddNewPlaylistButton = (Button) findViewById(R.id.addNewPlaylistButton);
-        mAddNewSongButton = (Button) findViewById(R.id.addNewSongButton);
-        mViewAllSongsButton = (Button) findViewById(R.id.viewAllSongsButton);
+        mPlaylistNameText = (TextView) findViewById(R.id.playlistNameText);
+        mAddSongsToPlaylistButton = (Button) findViewById(R.id.addSongsToPlaylistButton);
 
-        mPlaylists = (ArrayList) Playlist.all();
-        mAdapter = new PlaylistAdapter(this, mPlaylists);
+        String playlistTitle = getIntent().getStringExtra("playlistTitle");
+        mPlaylistNameText.setText(playlistTitle);
 
+        mSongs = (ArrayList) Song.all();
+        mAdapter = new SongsInPlaylistAdapter(this, mSongs);
         setListAdapter(mAdapter);
 
-        mDisplaySomething = (TextView) findViewById(R.id.displaySomething);
-        mDisplaySomething.setText("PLAYLISTS");
 
-        mAddNewSongButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(PlaylistActivity.this, NewSongActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        mViewAllSongsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(PlaylistActivity.this, ViewAllSongsActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        mAddNewPlaylistButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(PlaylistActivity.this, AddNewPlaylistActivity.class);
-                startActivity(intent);
-            }
-        });
     }
+
 
 }

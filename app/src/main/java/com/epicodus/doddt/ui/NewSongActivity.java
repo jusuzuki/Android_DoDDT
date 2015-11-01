@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.epicodus.doddt.R;
-import com.epicodus.doddt.models.Playlist;
 import com.epicodus.doddt.models.Song;
 
 public class NewSongActivity extends AppCompatActivity {
@@ -30,7 +29,7 @@ public class NewSongActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 addSong();
-                Intent intent = new Intent(NewSongActivity.this, PlaylistActivity.class);
+                Intent intent = new Intent(NewSongActivity.this, AllPlaylistsActivity.class);
                 startActivity(intent);
             }
         });

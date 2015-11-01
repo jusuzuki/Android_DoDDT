@@ -48,7 +48,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name=".ui.PlaylistActivity"
+            android:name=".ui.AllPlaylistsActivity"
             android:label="@string/title_activity_playlist"
             android:parentActivityName=".ui.MainActivity" >
             <meta-data
@@ -58,26 +58,34 @@
         <activity
             android:name=".ui.NewSongActivity"
             android:label="@string/title_activity_new_song"
-            android:parentActivityName=".ui.PlaylistActivity" >
+            android:parentActivityName=".ui.AllPlaylistsActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.doddt.ui.PlaylistActivity" />
+                android:value=".ui.AllPlaylistsActivity" />
         </activity>
         <activity
             android:name=".ui.ViewAllSongsActivity"
             android:label="@string/title_activity_view_all_songs"
-            android:parentActivityName=".ui.PlaylistActivity" >
+            android:parentActivityName=".ui.AllPlaylistsActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.doddt.ui.PlaylistActivity" />
+                android:value=".ui.AllPlaylistsActivity" />
         </activity>
         <activity
             android:name=".ui.AddNewPlaylistActivity"
             android:label="@string/title_activity_add_new_playlist"
-            android:parentActivityName=".ui.PlaylistActivity" >
+            android:parentActivityName=".ui.AllPlaylistsActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.doddt.ui.PlaylistActivity" />
+                android:value=".ui.AllPlaylistsActivity" />
+        </activity>
+        <activity
+            android:name=".ui.PlaylistActivity"
+            android:label="@string/title_activity_playlist"
+            android:parentActivityName=".ui.AllPlaylistsActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.doddt.ui.AllPlaylistsActivity" />
         </activity>
     </application>
 
