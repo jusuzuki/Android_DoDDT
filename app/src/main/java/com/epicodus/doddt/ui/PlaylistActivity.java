@@ -20,10 +20,8 @@ public class PlaylistActivity extends ListActivity {
     private Button mAddNewPlaylistButton;
     private Button mAddNewSongButton;
     private Button mViewAllSongsButton;
-    private SongAdapter mAdapter;
-    private ArrayList<Song> mSongs;
-//    private PlaylistAdapter mAdapter;
-//    private ArrayList<Playlist> mPlaylists;
+    private PlaylistAdapter mAdapter;
+    private ArrayList<Playlist> mPlaylists;
     private TextView mDisplaySomething;
 
     @Override
@@ -35,10 +33,8 @@ public class PlaylistActivity extends ListActivity {
         mAddNewSongButton = (Button) findViewById(R.id.addNewSongButton);
         mViewAllSongsButton = (Button) findViewById(R.id.viewAllSongsButton);
 
-        mSongs = (ArrayList) Song.all();
-        mAdapter = new SongAdapter(this, mSongs);
-//        mPlaylists = (ArrayList) Playlist.all();
-//        mAdapter = new PlaylistAdapter(this, mPlaylists);
+        mPlaylists = (ArrayList) Playlist.all();
+        mAdapter = new PlaylistAdapter(this, mPlaylists);
 
         setListAdapter(mAdapter);
 
@@ -57,6 +53,14 @@ public class PlaylistActivity extends ListActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PlaylistActivity.this, ViewAllSongsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mAddNewPlaylistButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PlaylistActivity.this, AddNewPlaylistActivity.class);
                 startActivity(intent);
             }
         });

@@ -19,6 +19,11 @@ public class PlaylistAdapter extends BaseAdapter {
     private Context mContext;
     private ArrayList<Playlist> mPlaylists;
 
+    public PlaylistAdapter(Context context, ArrayList<Playlist> playlists){
+        mPlaylists = playlists;
+        mContext = context;
+    }
+
     @Override
     public int getCount() {
         return mPlaylists.size();

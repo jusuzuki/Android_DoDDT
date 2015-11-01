@@ -5,44 +5,29 @@ import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 import com.activeandroid.query.Select;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by jusuzuki on 11/1/15.
  */
-@Table(name = "Playlist", id = "_id")
+@Table(name = "Playlists", id = "_id")
 public class Playlist extends Model {
 
-    @Column(name = "Name")
-    public String mName;
-
-    @Column(name = "Song")
-    public Song mSong;
+    @Column(name = "Playlist")
+    public String mPlaylist;
 
     public Playlist(){
         super();
     }
 
-    public Playlist(String name, Song song){
+    public Playlist(String name){
         super();
-        mName = name;
-        mSong = song;
+        mPlaylist = name;
     }
 
-    public String getName() {
-        return mName;
-    }
-
-    public void setName(String mName) {
-        this.mName = mName;
-    }
-
-    public Song getSong() {
-        return mSong;
-    }
-
-    public void setSong(Song mSong) {
-        this.mSong = mSong;
+    public String getName(){
+        return mPlaylist;
     }
 
     public static List<Playlist> all(){
@@ -51,10 +36,35 @@ public class Playlist extends Model {
                 .execute();
     }
 
-    public List<Playlist> getPlaylist(String name){
+    public static Playlist find(String name){
         return new Select()
                 .from(Playlist.class)
-                .where("Name = ?", name)
-                .execute();
+                .where("Playlist = ?", name)
+                .executeSingle();
+    }
+
+//    public List<Song> getSongs(){
+//        List<PlaylistSong> joins = new Select()
+//                .from(PlaylistSong.class)
+//                .where("Name = ?", this.getId());
+//                .execute();
+//
+//        List<Song> songs = new ArrayList<>();
+//
+//        for(PlaylistSong join : joins){
+//            songs.add(join.mSong);
+//        }
+//
+//        return songs;
+//    }
+
+    public static Playlist newPlaylist(String name){
+        Playlist playlist = find(name);
+
+        if (playlist == null){
+            playlist = new Playlist(name);
+            playlist.save();
+        }
+        return playlist;
     }
 }

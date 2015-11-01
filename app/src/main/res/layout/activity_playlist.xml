@@ -23,12 +23,16 @@
         android:layout_centerHorizontal="true" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="New Text"
         android:id="@+id/displaySomething"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:background="#000000"
+        android:gravity="center_horizontal" />
 
     <ListView
         android:layout_width="wrap_content"
@@ -37,7 +41,8 @@
         android:layout_below="@+id/displaySomething"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_above="@+id/viewAllSongsButton" />
+        android:layout_above="@+id/viewAllSongsButton"
+        android:layout_marginTop="10dp" />
 
     <Button
         android:layout_width="fill_parent"
