@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mTimezoneButton;
     private Button mQuotesButton;
     private Button mGalleryButton;
+    private Button mPlaylistButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         mTimezoneButton = (Button) findViewById(R.id.timezoneButton);
         mQuotesButton = (Button) findViewById(R.id.quotesButton);
         mGalleryButton = (Button) findViewById(R.id.galleryButton);
+        mPlaylistButton = (Button) findViewById(R.id.playlistButton);
+
 
         mTimezoneButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +48,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, QuoteActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mPlaylistButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, PlaylistActivity.class);
                 startActivity(intent);
             }
         });

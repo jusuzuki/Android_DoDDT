@@ -21,7 +21,7 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:id="@+id/galleryView"
-        android:src="@drawable/photo_01"
+        android:src="@drawable/photo01"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="62dp"/>

@@ -24,27 +24,32 @@ public class GalleryLib {
 
         mGallery.add(new Gallery (
                 "First image",
-                R.drawable.photo_01
+                R.drawable.photo01
         ));
 
         mGallery.add(new Gallery (
                 "Second image",
-                R.drawable.photo_02
+                R.drawable.photo02
         ));
 
         mGallery.add(new Gallery (
                 "Third image",
-                R.drawable.photo_03
+                R.drawable.photo03
         ));
 
         mGallery.add(new Gallery (
                 "Fourth image",
-                R.drawable.photo_04
+                R.drawable.photo04
         ));
 
         mGallery.add(new Gallery (
                 "Fifth image",
-                R.drawable.photo_05
+                R.drawable.photo05
+        ));
+
+        mGallery.add(new Gallery (
+                "Sixth image",
+                R.drawable.photo06
         ));
     }
 

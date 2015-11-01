@@ -40,8 +40,28 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.epicodus.doddt.ui.MainActivity" />
-            <meta-data android:name="AA_DB_NAME" android:value="DoDDT.db" />
-            <meta-data android:name="AA_DB_VERSION" android:value="1" />
+            <meta-data
+                android:name="AA_DB_NAME"
+                android:value="DoDDT.db" />
+            <meta-data
+                android:name="AA_DB_VERSION"
+                android:value="1" />
+        </activity>
+        <activity
+            android:name=".ui.PlaylistActivity"
+            android:label="@string/title_activity_playlist"
+            android:parentActivityName=".ui.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.doddt.ui.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.NewSongActivity"
+            android:label="@string/title_activity_new_song"
+            android:parentActivityName=".ui.PlaylistActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.doddt.ui.PlaylistActivity" />
         </activity>
     </application>
 
