@@ -29,23 +29,23 @@ public class Playlist extends Model {
         mSong = song;
     }
 
-    public String getmName() {
+    public String getName() {
         return mName;
     }
 
-    public void setmName(String mName) {
+    public void setName(String mName) {
         this.mName = mName;
     }
 
-    public Song getmSong() {
+    public Song getSong() {
         return mSong;
     }
 
-    public void setmSong(Song mSong) {
+    public void setSong(Song mSong) {
         this.mSong = mSong;
     }
 
-    public List<Playlist> all(){
+    public static List<Playlist> all(){
         return new Select()
                 .from(Playlist.class)
                 .execute();

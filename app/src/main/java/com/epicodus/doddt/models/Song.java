@@ -33,27 +33,27 @@ public class Song extends Model{
         mUser = user;
     }
 
-    public String getmArtist() {
+    public String getArtist() {
         return mArtist;
     }
 
-    public void setmArtist(String mArtist) {
+    public void setArtist(String mArtist) {
         this.mArtist = mArtist;
     }
 
-    public String getmTitle() {
+    public String getTitle() {
         return mTitle;
     }
 
-    public void setmTitle(String mTitle) {
+    public void setTitle(String mTitle) {
         this.mTitle = mTitle;
     }
 
-    public String getmUser() {
+    public String getUser() {
         return mUser;
     }
 
-    public void setmUser(String mUser) {
+    public void setUser(String mUser) {
         this.mUser = mUser;
     }
 

@@ -29,6 +29,11 @@ public class QuoteLib {
                 "There are so many fragile things, after all. People break so easily, and so do dreams and hearts.",
                 "Neil Gaiman"
         ));
+
+        mQuotes.add(new Quote (
+                "The gods only go with you, Myrddin Emrys, if you put yourself in their path. And that takes courage.",
+                "Mary Stewart"
+        ));
     }
 
     public Quote nextQuote(Quote currentQuote){

@@ -8,4 +8,5 @@
     <string name="title_activity_quote">QuoteActivity</string>
     <string name="title_activity_playlist">PlaylistActivity</string>
     <string name="title_activity_new_song">NewSongActivity</string>
+    <string name="title_activity_view_all_songs">ViewAllSongsActivity</string>
 </resources>
