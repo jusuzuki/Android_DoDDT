@@ -30,15 +30,6 @@ public class PlaylistSong extends Model {
         mSong = song;
     }
 
-
-//    public static List<Song> getSongs(String playlistTitle){
-//        Playlist playlist = Playlist.find(playlistTitle);
-//        return new Select("Song")
-//            .from(PlaylistSong.class)
-//            .where("Playlist = ?", playlist.getId())
-//            .execute();
-//    }
-
     public static List<Song> getSongs(String playlistTitle){
         Playlist playlist = Playlist.find(playlistTitle);
         List<PlaylistSong> listOfPlaylistSongs = new Select()

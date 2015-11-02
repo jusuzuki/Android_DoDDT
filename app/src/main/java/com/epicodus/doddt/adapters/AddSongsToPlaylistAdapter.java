@@ -69,8 +69,11 @@ public class AddSongsToPlaylistAdapter extends BaseAdapter {
             public void onClick(View view) {
                 Intent intent = new Intent(mContext, PlaylistActivity.class);
 
+                //PROBLEM CAPTURING THE PLAYLIST NAME FROM THE CONTEXT ABOVE THE ADAPTER!!!
                 String playlistTitle = intent.getStringExtra("playlistTitle");
-                Playlist playlist = Playlist.find("sunday");
+                //HAD TO HARDCODE THE PLAYLIST NAME
+                Playlist playlist = Playlist.find("another");
+
                 PlaylistSong addToPlaylist = new PlaylistSong(playlist, song);
                 addToPlaylist.save();
 

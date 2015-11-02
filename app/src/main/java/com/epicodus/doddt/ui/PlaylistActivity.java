@@ -27,6 +27,7 @@ public class PlaylistActivity extends ListActivity {
     private Button mAddSongsToPlaylistButton;
     private SongsInPlaylistAdapter mAdapter;
     private ArrayList<Song> mSongs;
+    public String mPlaylistTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +38,11 @@ public class PlaylistActivity extends ListActivity {
         mAddSongsToPlaylistButton = (Button) findViewById(R.id.addSongsToPlaylistButton);
 
         final String playlistTitle = getIntent().getStringExtra("playlistTitle");
+        mPlaylistTitle = playlistTitle;
         mPlaylistNameText.setText(playlistTitle);
-        Playlist playlist = Playlist.find("sunday");
+        //Playlist playlist = Playlist.find(playlistTitle);
 
-        mSongs = (ArrayList) PlaylistSong.getSongs("sunday");
+        mSongs = (ArrayList) PlaylistSong.getSongs(playlistTitle);
         mAdapter = new SongsInPlaylistAdapter(this, mSongs);
         setListAdapter(mAdapter);
 
