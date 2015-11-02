@@ -43,7 +43,8 @@ public class Playlist extends Model {
                 .executeSingle();
     }
 
-//    public List<Song> getSongs(Playlist playlist){
+//    public List<Song> getSongs(String playlistTitle){
+//        Playlist playlist = Playlist.find(playlistTitle);
 //        List<PlaylistSong> joins = new Select()
 //                .from(PlaylistSong.class)
 //                .where("Playlist = ?", playlist);

@@ -30,32 +30,29 @@ public class PlaylistSong extends Model {
         mSong = song;
     }
 
-    public Song getSong(){
-        return this.mSong;
-    }
-
-    public static List<Song> getSongs(String playlistTitle){
-        Playlist playlist = Playlist.find(playlistTitle);
-        return new Select("Song")
-            .from(PlaylistSong.class)
-            .where("Playlist = ?", playlist)
-            .execute();
-    }
 
 //    public static List<Song> getSongs(String playlistTitle){
 //        Playlist playlist = Playlist.find(playlistTitle);
-//        List<PlaylistSong> listOfPlaylistSongs = new Select()
-//                .from(PlaylistSong.class)
-//                .where("Playlist = ?", playlist)
-//                .execute();
-//
-//        List<Song> listOfSongs = new ArrayList<>();
-//        for (PlaylistSong playlistSong : listOfPlaylistSongs){
-//            Song song = playlistSong.getSong();
-//            listOfSongs.add(song);
-//        }
-//
-//        return listOfSongs;
+//        return new Select("Song")
+//            .from(PlaylistSong.class)
+//            .where("Playlist = ?", playlist.getId())
+//            .execute();
 //    }
+
+    public static List<Song> getSongs(String playlistTitle){
+        Playlist playlist = Playlist.find(playlistTitle);
+        List<PlaylistSong> listOfPlaylistSongs = new Select()
+                .from(PlaylistSong.class)
+                .where("Playlist = ?", playlist.getId())
+                .execute();
+
+        List<Song> listOfSongs = new ArrayList<>();
+        for (PlaylistSong playlistSong : listOfPlaylistSongs){
+            Song song = playlistSong.mSong;
+            listOfSongs.add(song);
+        }
+
+        return listOfSongs;
+    }
 
 }
