@@ -87,6 +87,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.epicodus.doddt.ui.AllPlaylistsActivity" />
         </activity>
+        <activity
+            android:name=".ui.AddSongsToPlaylistActivity"
+            android:label="@string/title_activity_add_songs_to_playlist"
+            android:parentActivityName=".ui.PlaylistActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.doddt.ui.PlaylistActivity" />
+        </activity>
     </application>
 
 </manifest>

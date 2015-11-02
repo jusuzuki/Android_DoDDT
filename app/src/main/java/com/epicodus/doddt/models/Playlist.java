@@ -43,10 +43,10 @@ public class Playlist extends Model {
                 .executeSingle();
     }
 
-//    public List<Song> getSongs(){
+//    public List<Song> getSongs(Playlist playlist){
 //        List<PlaylistSong> joins = new Select()
 //                .from(PlaylistSong.class)
-//                .where("Name = ?", this.getId());
+//                .where("Playlist = ?", playlist);
 //                .execute();
 //
 //        List<Song> songs = new ArrayList<>();
@@ -66,5 +66,12 @@ public class Playlist extends Model {
             playlist.save();
         }
         return playlist;
+    }
+
+
+    public static void addToPlaylist(String playlistName, Song song){
+        Playlist getPlaylist = Playlist.find(playlistName);
+        PlaylistSong addSongToPlaylist = new PlaylistSong(getPlaylist, song);
+        addSongToPlaylist.save();
     }
 }

@@ -62,4 +62,11 @@ public class Song extends Model{
                 .from(Song.class)
                 .execute();
     }
+
+    public static Song find(String title){
+        return new Select()
+                .from(Song.class)
+                .where("Title = ?", title)
+                .executeSingle();
+    }
 }

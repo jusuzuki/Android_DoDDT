@@ -3,6 +3,10 @@ package com.epicodus.doddt.models;
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
+import com.activeandroid.query.Select;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by jusuzuki on 11/1/15.
@@ -25,4 +29,33 @@ public class PlaylistSong extends Model {
         mPlaylist = playlist;
         mSong = song;
     }
+
+    public Song getSong(){
+        return this.mSong;
+    }
+
+    public static List<Song> getSongs(String playlistTitle){
+        Playlist playlist = Playlist.find(playlistTitle);
+        return new Select("Song")
+            .from(PlaylistSong.class)
+            .where("Playlist = ?", playlist)
+            .execute();
+    }
+
+//    public static List<Song> getSongs(String playlistTitle){
+//        Playlist playlist = Playlist.find(playlistTitle);
+//        List<PlaylistSong> listOfPlaylistSongs = new Select()
+//                .from(PlaylistSong.class)
+//                .where("Playlist = ?", playlist)
+//                .execute();
+//
+//        List<Song> listOfSongs = new ArrayList<>();
+//        for (PlaylistSong playlistSong : listOfPlaylistSongs){
+//            Song song = playlistSong.getSong();
+//            listOfSongs.add(song);
+//        }
+//
+//        return listOfSongs;
+//    }
+
 }
