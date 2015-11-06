@@ -11,4 +11,5 @@
     <string name="title_activity_view_all_songs">ViewAllSongsActivity</string>
     <string name="title_activity_add_new_playlist">AddNewPlaylistActivity</string>
     <string name="title_activity_add_songs_to_playlist">AddSongsToPlaylistActivity</string>
+    <string name="title_activity_admin">AdminActivity</string>
 </resources>

@@ -95,6 +95,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.epicodus.doddt.ui.PlaylistActivity" />
         </activity>
+        <activity
+            android:name=".admin.AdminActivity"
+            android:label="@string/title_activity_admin" >
+        </activity>
     </application>
 
 </manifest>
