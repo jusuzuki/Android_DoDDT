@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.epicodus.doddt.R;
 import com.epicodus.doddt.admin.AdminActivity;
+import com.parse.ParseObject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -26,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
 
         mTimezoneButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
 
     }
